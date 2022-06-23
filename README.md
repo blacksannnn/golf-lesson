@@ -1,24 +1,31 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users テーブル
 
-Things you may want to cover:
+| Column             | Type   | Options     |
+| ------------------ | ------ | ----------- |
+| nickname           | string | null: false |
+| email              | string | null: false |
+| encrypted_password | string | null: false |
+| score              | text   | null: false |
 
-* Ruby version
 
-* System dependencies
 
-* Configuration
+## lesson テーブル
 
-* Database creation
+| Column                    | Type         | Options     |
+| ------                    | ------       | ----------- |
+| day                       | string       | null: false |
+| golf club                 | text         | null: false |
+| number of balls           | text         | null: false |
+| contents of teaching      | references   | null: false |
+| user                      | references   | null: false, foreign_key: true |
 
-* Database initialization
 
-* How to run the test suite
+## comments テーブル
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+| Column       | Type       | Options                        |
+| -------      | ---------- | ------------------------------ |
+| content      | text       | null: false                    |
+| lesson       | references | null: false, foreign_key: true |
+| user         | references | null: false, foreign_key: true |
