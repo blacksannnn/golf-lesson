@@ -32,7 +32,7 @@ Things you may want to cover:
 | nickname           | string | null: false |
 | email              | string | null: false |
 | encrypted_password | string | null: false |
-| score              | text   | null: false |
+| score              | string | null: false |
 
 
 
